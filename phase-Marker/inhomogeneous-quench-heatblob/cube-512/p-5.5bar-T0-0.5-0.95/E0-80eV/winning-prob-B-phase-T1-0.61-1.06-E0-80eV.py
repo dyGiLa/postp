@@ -28,23 +28,22 @@ root_dir = '/home/heidi/ReHD/dyGiLa-project/dyGiLa-data/lumi-project_462000960/p
 # Base glob pattern to match all pv.csv files under RSeed-* folders
 pattern = os.path.join(root_dir, "RSeed-*-T0-0.5-0.95", "p-5.5-T1-*", "stats", "phaseVolume-stream.csv")
 csv_files = glob.glob(pattern)
-
-# print("csv_files : ", csv_files)
+# print("csv_files = ", csv_files)
 
 # plot marker sizes
 s=[50, 70, 90, 110]
 
-# A-phase remaining failed
+# A-phase remaining failed Threshold
 AfT = 0.75
 
-# B-phase proliferation success
+# B-phase proliferation success Threshold
 BsT = 0.01
 
-# phase marker 1 portion label
+# phase marker 1 portion label Threshold
 p1T = 0.1
 
 
-# Dictionary to hold d3 values per yyy#
+# python Dictionary to hold Vratio_px values per px #
 p9CSV_last_by_T1 = defaultdict(list)
 p5CSV_last_by_T1 = defaultdict(list)
 p1CSV_last_by_T1 = defaultdict(list)
@@ -53,7 +52,10 @@ for csv_file in csv_files:
     try:
         # Extract T1 from folder name: "p-5.5-T1-#"
         parent_dir = os.path.basename(os.path.dirname(os.path.dirname(csv_file)))
+        # print("parent_dir = ",parent_dir)
         T1Val_str = parent_dir.replace("p-5.5-T1-", "")
+        # print("T1Val_str = ", T1Val_str)
+        
         T1Val_val = float(T1Val_str)
 
         df = pd.read_csv(csv_file)
@@ -71,6 +73,8 @@ for csv_file in csv_files:
         
 # Compute probability for each T1 value
 T1_values = sorted(p9CSV_last_by_T1.keys())
+print("T1_values = ", T1_values)
+
 probabilities = []
 
 for T1 in T1_values:
@@ -90,7 +94,7 @@ for T1 in T1_values:
     #    for p9, p5, p1 in zip(p9CSV_vals, p5CSV_vals, p1CSV_vals)
     # )
     
-    print("count = ",count)
+    print("count = ",count, " for T1 = ", T1)
     total = len(p9CSV_vals)
     print("total = ",total)
     
