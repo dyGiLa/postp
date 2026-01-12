@@ -17,7 +17,7 @@ output_csv = 'DP-2-x-11.77-y-5.csv'
 orientation = 'vertical'
 
 slice_axis = 'y'
-slice_coord = 0.
+slice_coord = 0.5
 
 # -------------------------------------------------
 # line data harvesting
