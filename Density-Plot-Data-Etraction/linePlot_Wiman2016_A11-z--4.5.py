@@ -13,11 +13,11 @@ cbar_box = (0, 67, 0, 615)
 cValues = (0.9, 1.12)
 x_range = (-11.77897574, 11.77897574)
 y_range = (-5.,0.)
-output_csv = 'DP-2-x-11.77-y-5.csv'
+output_csv = 'DP-2-x--11.77xi0-11.77xi0-y--5xi0-0xi.csv'
 orientation = 'vertical'
 
 slice_axis = 'y'
-slice_coord = 0.5
+slice_coord = -4.5
 
 # -------------------------------------------------
 # line data harvesting
