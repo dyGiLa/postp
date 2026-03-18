@@ -170,32 +170,32 @@ for file_path in filesVerHem:
         
     ax.plot(x_arr_verhem, gapA_verhem_arr,
             linewidth=LineWidth, 
-            label=fr'$\sqrt{{A^{{\dagger}}A}}\,,VerHem\, |Residul|_{{L_{{2}}}} = 1.3e-6$',
+            label=fr'$\sqrt{{A^{{\dagger}}A}}\,,VerHem\, |Residul|_{{L_{{2}}}} = 1.2e-13$',
             linestyle=line_styles[3], color=lineColors[7])
         
     ax.plot(x_arr_verhem, df["u_11"],
             linewidth=LineWidth, 
-            label=fr'$ReA_{{11}}\,,VerHem\, |Residul|_{{L_{{2}}}} = 1.3e-6$',
+            label=fr'$ReA_{{11}}\,,VerHem\, |Residul|_{{L_{{2}}}} = 1.2e-13$',
             linestyle=line_styles[3], color=lineColors[1])
     
     ax.plot(x_arr_verhem, df["u_22"],
             linewidth=LineWidth, 
-            label=fr'$ReA_{{22}}\,,VerHem\, |Residul|_{{L_{{2}}}} = 1.3e-6$',
+            label=fr'$ReA_{{22}}\,,VerHem\, |Residul|_{{L_{{2}}}} = 1.2e-13$',
             linestyle=line_styles[3], color=lineColors[2])
 
     ax.plot(x_arr_verhem, df["u_33"],
             linewidth=LineWidth, 
-            label=fr'$ReA_{{33}}\,,VerHem\, |Residul|_{{L_{{2}}}} = 1.3e-6$',
+            label=fr'$ReA_{{33}}\,,VerHem\, |Residul|_{{L_{{2}}}} = 1.2e-13$',
             linestyle=line_styles[3], color=lineColors[3])
 
     ax.plot(x_arr_verhem, df["v_12"],
             linewidth=LineWidth, 
-            label=fr'$ImA_{{12}}\,,VerHem\, |Residul|_{{L_{{2}}}} = 1.3e-6$',
+            label=fr'$ImA_{{12}}\,,VerHem\, |Residul|_{{L_{{2}}}} = 1.2e-13$',
             linestyle=line_styles[3], color=lineColors[4])
 
     ax.plot(x_arr_verhem, df["v_21"],
             linewidth=LineWidth, 
-            label=fr'$ImA_{{21}}\,,VerHem\, |Residul|_{{L_{{2}}}} = 1.3e-6$',
+            label=fr'$ImA_{{21}}\,,VerHem\, |Residul|_{{L_{{2}}}} = 1.2e-13$',
             linestyle=line_styles[3], color=lineColors[5])
     
 #------------------------------------------------------------#
@@ -237,12 +237,12 @@ ax.set_ylabel(r"$X/k_B T_C$", fontsize=26.0)
 ax.set_xlim(-40, 40)
 ax.set_ylim(-0.25, 2.5)
 ax.tick_params(axis='both', which='major', labelsize=30)
-ax.set_title(fr"AB Domain Wall configuration at ${{28}}$bar from dyGiLa, VerHem and Mark's Solver", fontsize=26, pad=15)
+ax.set_title(fr"AB Domain Wall configuration at ${{28}}$bar $T_{{AB}}$ from dyGiLa, VerHem", fontsize=26, pad=15)
 ax.legend(handlelength=3.2, fontsize=11, title_fontsize=14)
 ax.grid(True, alpha=0.9, linestyle='-')
 
-plt.tight_layout()
+#plt.tight_layout()
 plt.show()
 
-fig.savefig('AB-DWall-diff_Solvers-verhem-lPerpWall-yz-periodic-128x6x6-res1en13', dpi=300, pad_inches=0.0)
+fig.savefig('AB-DWall-diff_Solvers-verhem-lPerpWall-yz-periodic-128x12x12-res1en13', dpi=300, pad_inches=0.0)
 plt.close(fig)
